@@ -1,10 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 .NavbarItems {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: #ececec;
   color: #fff;
   padding: 10px 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 5ss00;
+  font-size: 20px;
 }
 
 .logo img {
@@ -19,12 +24,12 @@
 .nav-menu {
   list-style: none;
   display: flex;
-  margin: 0;
+  margin-right: 4vw;
   padding: 0;
 }
 
 .nav-menu li {
-  margin-right: 20px;
+  margin-right: 10vw;
 }
 
 .nav-menu li:last-child {
@@ -32,7 +37,7 @@
 }
 
 .nav-menu li a {
-  color: #fff;
+  color: #1e1e1e;
   text-decoration: none;
 }
 
@@ -49,7 +54,7 @@
     top: 60px; /* Adjust as needed */
     left: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #1e1e1e;
     padding: 10px 0;
   }
 

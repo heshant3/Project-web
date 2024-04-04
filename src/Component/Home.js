@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <div className="home-container">
       <Navbar />
+      <div className="box"></div>
     </div>
   );
 }

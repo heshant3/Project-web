@@ -1,41 +1,36 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../logo.svg";
+import "./Navbar.css";
 
-class Navbar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-    };
-  }
+function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
 
-  toggleMenu = () => {
-    this.setState({ isOpen: !this.state.isOpen });
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
-  render() {
-    return (
-      <nav className="NavbarItems">
-        <div className="menu-icon" onClick={this.toggleMenu}>
-          <i className={this.state.isOpen ? "fas fa-times" : "fas fa-bars"} />
-        </div>
-        <a href="#" className="logo">
-          <img src={logo} alt="" />
-        </a>
-        <ul className={this.state.isOpen ? "nav-menu active" : "nav-menu"}>
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    );
-  }
+  return (
+    <nav className="NavbarItems">
+      <a href="#" className="logo">
+        <img src={logo} alt="" />
+      </a>
+      <div className="menu-icon" onClick={toggleMenu}>
+        {isOpen ? <FaTimes /> : <FaBars />}
+      </div>
+      <ul className={isOpen ? "nav-menu active" : "nav-menu"}>
+        <li>
+          <a href="#home">Home</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  );
 }
 
 export default Navbar;
