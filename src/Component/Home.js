@@ -1,14 +1,11 @@
 import React from "react";
 import "./Home.css";
-import Navbar from "./Navbar.js";
-import About from "./About.js";
-import Project from "./Project.js";
-import Contact from "./Contact.js";
+import { Canvas } from "@react-three/fiber";
+import Scene from "./Scene.js";
 
 export default function Home() {
   return (
-    <div className="home-container">
-      <Navbar />
+    <div className="home-containerq">
       <div className="body-container">
         <div className="box">
           <h1 className="HeadText">The best way to build your project</h1>
@@ -38,25 +35,11 @@ export default function Home() {
             <button className="Button">Get Quotation</button>
           </div>
         </div>
-        <div className="box"></div>
-      </div>
-
-      {/* 2nd scroller   */}
-      <div className="ModelCOntainer"></div>
-
-      {/* 3rd scroller   */}
-      <div className="ModelCOntainer">
-        <About />
-      </div>
-
-      {/* 4th scroller   */}
-      <div className="ModelCOntainer">
-        <Project />
-      </div>
-
-      {/* 5th scroller   */}
-      <div className="ModelCOntainer">
-        <Contact />
+        <div className="box2">
+          {/* <Canvas>
+            <Scene />
+          </Canvas> */}
+        </div>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ export default function About() {
     autoplay: true,
     animationData: animationData,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
+      // preserveAspectRatio: "xMidYMid slice"
     },
   };
   return (
@@ -29,7 +29,7 @@ export default function About() {
           <h2 className="BodyText">• On-Time delivery</h2>
         </div>
         <div className="AboutBox1">
-          <Lottie options={defaultOptions} height={700} width={700} />
+          <Lottie options={defaultOptions} isClickToPauseDisabled={true} />
         </div>
       </div>
     </div>

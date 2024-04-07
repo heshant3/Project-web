@@ -1,7 +1,7 @@
-import Home from "./Component/Home";
+import Pages from "./Component/Pages";
 
 function App() {
-  return <Home />;
+  return <Pages />;
 }
 
 export default App;
