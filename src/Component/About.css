@@ -29,6 +29,7 @@
 }
 
 .HeaderText {
+  margin-top: 0em;
   margin-bottom: 30px;
   margin-left: 30px;
   font-size: 4rem;
@@ -48,13 +49,14 @@
 
 @media screen and (max-width: 768px) {
   .About-BodyContainer {
+    margin-top: 0rem;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column-reverse;
   }
 
   .HeaderText {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     margin-left: 0px;
     font-size: 2em;
   }

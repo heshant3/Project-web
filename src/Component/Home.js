@@ -1,9 +1,17 @@
 import React from "react";
 import "./Home.css";
-import { Canvas } from "@react-three/fiber";
-import Scene from "./Scene.js";
+import Lottie from "react-lottie";
+import animationData from "../assest/Animation2.json";
 
 export default function Home() {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      // preserveAspectRatio: "xMidYMid slice"
+    },
+  };
   return (
     <div className="home-containerq">
       <div className="body-container">
@@ -36,9 +44,11 @@ export default function Home() {
           </div>
         </div>
         <div className="box2">
-          {/* <Canvas>
-            <Scene />
-          </Canvas> */}
+          <Lottie
+            // style={{ width: "110%", height: "110%" }}
+            options={defaultOptions}
+            isClickToPauseDisabled={true}
+          />
         </div>
       </div>
     </div>

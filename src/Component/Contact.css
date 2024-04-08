@@ -19,12 +19,13 @@
 
 @media screen and (max-width: 768px) {
   .Contact-Container {
-    position: relative;
     width: 100vw;
     height: 100vh;
+    text-align: center;
   }
 
   .EmailText {
+    /* padding-top: 20rem; */
     font-size: 2em;
   }
 }
