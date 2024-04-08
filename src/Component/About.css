@@ -64,21 +64,17 @@
     width: 100vw;
     margin-top: 0rem;
     column-gap: 1px;
-  }
-  .About-Container {
     text-align: center;
   }
 
   .AboutBox {
-    width: 100vw;
-    padding-left: 30px;
-    padding-right: 30px;
+    width: 80%;
   }
 
   .BodyText {
     margin-top: 30px;
     margin-left: 0px;
-    font-size: 1.11em;
+    font-size: 1em;
     text-align: left;
   }
 

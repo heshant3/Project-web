@@ -1,9 +1,8 @@
 import React from "react";
 import {
   Environment,
-  GizmoHelper,
-  GizmoViewport,
   OrbitControls,
+  PerspectiveCamera,
 } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import { Model } from "./Model";
@@ -21,8 +20,9 @@ const Scene = () => {
         enablePan={false}
         enableRotate={false}
       />
-
-      <Model scale={0.1} rotation={[1.4, 3.5, 0]} position={[0, -0.8, 0.6]} />
+      <PerspectiveCamera position={[0, 0, 0]}>
+        <Model scale={0.13} rotation={[1.4, 3.5, 0]} position={[0, -0.8, 0]} />
+      </PerspectiveCamera>
       <Environment preset="city" />
     </>
   );

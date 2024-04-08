@@ -27,7 +27,8 @@
   width: 40vw;
   height: 70vh;
   margin-top: 15em;
-  /* background-color: #404dff3d; */
+  background-color: #404dff3d;
+  overflow: hidden;
 }
 
 .HeadText {

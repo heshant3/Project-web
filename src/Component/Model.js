@@ -6,25 +6,17 @@ import gsap from "gsap";
 export function Model(props) {
   const { nodes, materials } = useGLTF("/Model.glb");
   const model = useRef();
-  const scroll = useScroll();
-  const tl = useRef();
 
-  useFrame((state, delta) => {
-    tl.current.seek(scroll.offset * tl.current.duration());
+  useFrame(({ clock }) => {
+    const time = clock.getElapsedTime();
+    // Adjust the amplitude and speed of the floating animation as needed
+    const amplitude = 0.5;
+    const speed = 1;
+    model.current.position.y = Math.sin(time * speed) * amplitude;
   });
 
-  useLayoutEffect(() => {
-    tl.current = gsap.timeline({
-      defaults: { duration: 2, ease: "power1.inOut" },
-    });
-
-    tl.current
-      .to(model.current.rotation, { y: -1 }, 2)
-      .to(model.current.position, { x: 1 }, 2);
-  }, []);
-
   return (
-    <group {...props} dispose={null} ref={model}>
+    <group {...props} dispose={null} ref={model} position={[0, 0, 0]}>
       <group
         position={[7.767, 1.453, 2.2]}
         rotation={[Math.PI / 2, 0, 1.577]}
