@@ -13,7 +13,7 @@ export default function Home() {
     },
   };
   return (
-    <div className="home-containerq">
+    <div className="home-containerq" id="home">
       <div className="body-container">
         <div className="box">
           <h1 className="HeadText">The best way to build your project</h1>

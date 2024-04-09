@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../logo.svg";
 import "./Navbar.css";
+import { Link } from "react-scroll";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,21 +31,27 @@ function Navbar() {
 
   return (
     <nav className={visible ? "NavbarItems" : "NavbarItems hidden"}>
-      <a href="#" className="logo">
+      <Link to="home" spy={true} smooth={true} className="logo">
         <img src={logo} alt="" />
-      </a>
+      </Link>
       <div className="menu-icon" onClick={toggleMenu}>
         {isOpen ? <FaTimes /> : <FaBars />}
       </div>
       <ul className={isOpen ? "nav-menu active" : "nav-menu"}>
         <li>
-          <a href="#home">Home</a>
+          <Link activeClass="active" to="home" spy={true} smooth={true}>
+            Home
+          </Link>
         </li>
         <li>
-          <a href="#about">About</a>
+          <Link to="about" spy={true} smooth={true}>
+            About
+          </Link>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <Link to="contact" spy={true} smooth={true}>
+            Contact
+          </Link>
         </li>
       </ul>
     </nav>

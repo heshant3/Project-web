@@ -13,7 +13,7 @@ export default function About() {
     },
   };
   return (
-    <div className="About-Container">
+    <div className="About-Container" id="about">
       <h1 className="HeaderText">Why you choose us </h1>
       <div className="About-BodyContainer">
         <div className="AboutBox">
