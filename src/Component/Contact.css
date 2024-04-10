@@ -17,6 +17,12 @@
   font-weight: 400;
 }
 
+@media screen and (max-width: 378px) {
+  .Contact-Container {
+    margin-top: 50rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .Contact-Container {
     width: 100vw;

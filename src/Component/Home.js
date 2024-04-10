@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 import Lottie from "react-lottie";
 import animationData from "../assest/Animation2.json";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const defaultOptions = {
@@ -12,44 +13,92 @@ export default function Home() {
       // preserveAspectRatio: "xMidYMid slice"
     },
   };
+
   return (
     <div className="home-containerq" id="home">
       <div className="body-container">
         <div className="box">
-          <h1 className="HeadText">The best way to build your project</h1>
-          <h4 className="DescriptionText">
+          <motion.h1
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.1, duration: 1, ease: "backInOut" }}
+            className="HeadText"
+          >
+            The best way to build your project
+          </motion.h1>
+          <motion.h4
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 1, ease: "backInOut" }}
+            className="DescriptionText"
+          >
             Welcome to our exclusive platform, tailored for ICT students across
             Sri Lanka! Here, we're dedicated to amplifying your innovative
             projects, ensuring better results every step of the way. Let's turn
             your ideas into impactful realities together!
-          </h4>
+          </motion.h4>
           <div className="ProjectData">
-            <div className="Data">
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 1, ease: "backInOut" }}
+              className="Data"
+            >
               <h1 className="DataValue">8</h1>
               <h2 className="DataText">Client</h2>
-            </div>
-            <div className="line"></div>
-            <div className="Data">
+            </motion.div>
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 1, ease: "backInOut" }}
+              className="line"
+            ></motion.div>
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1, ease: "backInOut" }}
+              className="Data"
+            >
               <h1 className="DataValue">11</h1>
               <h2 className="DataText">Project</h2>
-            </div>
-            <div className="line"></div>
-            <div className="Data">
+            </motion.div>
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 1, ease: "backInOut" }}
+              className="line"
+            ></motion.div>
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.7, duration: 1, ease: "backInOut" }}
+              className="Data"
+            >
               <h1 className="DataValue">12</h1>
               <h2 className="DataText">Languages</h2>
-            </div>
+            </motion.div>
           </div>
-          <div className="ButtonContainer">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.8, duration: 1, ease: "backInOut" }}
+            className="ButtonContainer"
+          >
             <button className="Button">Get Quotation</button>
-          </div>
+          </motion.div>
         </div>
-        <div className="box2">
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 1, ease: "backInOut" }}
+          className="box2"
+        >
           <Lottie
             // style={{ width: "110%", height: "110%" }}
             options={defaultOptions}
             isClickToPauseDisabled={true}
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

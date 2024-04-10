@@ -1,15 +1,47 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Project.css";
 import { CgWebsite } from "react-icons/cg";
 import { ImMobile } from "react-icons/im";
 import { PiDevicesBold } from "react-icons/pi";
+import { motion, useAnimation } from "framer-motion";
 
 export default function Project() {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById("project");
+      const offset = window.innerHeight * 0.8; // Adjust this value according to when you want the animation to start
+
+      if (element.getBoundingClientRect().top < offset) {
+        controls.start({
+          opacity: 1,
+          y: 0,
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [controls]);
   return (
     <div className="Project-Container">
-      <h1 className="Project-HeaderText">We Support Various Project Types</h1>
+      <motion.h1
+        initial={{ y: 50, opacity: 0 }}
+        animate={controls}
+        transition={{ delay: 0.1, duration: 1, ease: "backInOut" }}
+        className="Project-HeaderText"
+        id="project"
+      >
+        We Support Various Project Types
+      </motion.h1>
       <div className="Project-BodyContainer">
-        <div className="ProjectBox">
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={controls}
+          transition={{ delay: 0.2, duration: 1, ease: "backInOut" }}
+          className="ProjectBox"
+        >
           <CgWebsite
             style={{ color: "#535353", fontSize: "4em", marginBottom: "3rem" }}
           />
@@ -19,8 +51,13 @@ export default function Project() {
             help you create innovative web applications that cater to diverse
             needs and audiences.
           </p>
-        </div>
-        <div className="ProjectBox">
+        </motion.div>
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={controls}
+          transition={{ delay: 0.3, duration: 1, ease: "backInOut" }}
+          className="ProjectBox"
+        >
           <ImMobile
             style={{ color: "#535353", fontSize: "4em", marginBottom: "3rem" }}
           />
@@ -30,8 +67,13 @@ export default function Project() {
             creating engaging and user-friendly mobile applications that cater
             to various industries and functionalities.
           </p>
-        </div>
-        <div className="ProjectBox">
+        </motion.div>
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={controls}
+          transition={{ delay: 0.4, duration: 1, ease: "backInOut" }}
+          className="ProjectBox"
+        >
           <PiDevicesBold
             style={{ color: "#535353", fontSize: "4em", marginBottom: "3rem" }}
           />
@@ -41,7 +83,7 @@ export default function Project() {
             implementing connected devices, sensors, and systems, enabling you
             to innovate and transform industries with IoT solutions.
           </p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
