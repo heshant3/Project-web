@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./Home.css";
+import "./Css/Home.css";
 import Lottie from "react-lottie";
 import animationData from "../assest/Animation2.json";
 import { motion } from "framer-motion";

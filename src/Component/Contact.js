@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./Contact.css";
+import "./Css/Contact.css";
 import { motion, useAnimation } from "framer-motion";
 
 export default function Contact() {

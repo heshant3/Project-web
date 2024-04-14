@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./Project.css";
+import "./Css/Project.css";
 import { CgWebsite } from "react-icons/cg";
 import { ImMobile } from "react-icons/im";
 import { PiDevicesBold } from "react-icons/pi";
