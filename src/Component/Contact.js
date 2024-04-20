@@ -72,6 +72,9 @@ const ContactForm = () => {
     }
   };
 
+  // Check if all required fields are filled
+  const isFormValid = name !== "" && email !== "" && message !== "";
+
   return (
     <div className="container" id="contact">
       <span className="big-circle"></span>
@@ -122,7 +125,7 @@ const ContactForm = () => {
           <span className="circle one"></span>
           <span className="circle two"></span>
 
-          <form onSubmit={handleFormSubmit} autoComplete="off">
+          <form ref={form} onSubmit={handleFormSubmit} autoComplete="off">
             <h3 className="title">Contact us</h3>
             <div className="input-container">
               <input
@@ -192,7 +195,12 @@ const ContactForm = () => {
               </label>
               <span className={focused ? "focus" : ""}></span>
             </div>
-            <input type="submit" value="Send" className="btn" />
+            <input
+              type="submit"
+              value="Send"
+              className={`btn ${!isFormValid ? "disabled" : ""}`}
+              disabled={!isFormValid}
+            />
           </form>
         </div>
       </div>
