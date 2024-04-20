@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ececec;
+  background-color: #fff;
   color: #fff;
   font-family: "Poppins", sans-serif;
   font-size: 2 0px;
@@ -24,6 +24,7 @@
 
 .logo img {
   height: 40px;
+  margin-left: 5rem;
 }
 
 .menu-icon {
@@ -73,7 +74,7 @@
     top: 60px;
     left: 0;
     width: 100%;
-    background-color: #ececec;
+    background-color: #fff;
     max-height: 0; /* Initially hide the menu */
     overflow: hidden; /* Hide overflow content */
     transition: max-height 0.9s ease; /* Add transition for smooth animation */
@@ -86,5 +87,9 @@
 
   .nav-menu li {
     margin: 10px 0;
+  }
+
+  .logo img {
+    margin-left: 0rem;
   }
 }
