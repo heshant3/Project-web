@@ -1,10 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Css/Home.css";
 import Lottie from "react-lottie";
 import animationData from "../assest/Animation2.json";
 import { motion } from "framer-motion";
+import { ref, onValue } from "firebase/database";
+import { db } from "./firebase";
 
 export default function Home() {
+  const [Client, setClient] = useState(null);
+  const [Project, setProject] = useState(null);
+  const [Technology, setTechnology] = useState(null);
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -13,6 +19,31 @@ export default function Home() {
       // preserveAspectRatio: "xMidYMid slice"
     },
   };
+
+  const handleButtonClick = () => {
+    window.open("https://wa.me/message/SOFTZIICGYYAM1", "_blank");
+  };
+
+  useEffect(() => {
+    const ClientRef = ref(db, "Client");
+    const ProjectRef = ref(db, "Project");
+    const TechnologyRef = ref(db, "Technology");
+
+    onValue(ClientRef, (snapshot) => {
+      const data = snapshot.val();
+      setClient(data);
+    });
+
+    onValue(ProjectRef, (snapshot) => {
+      const data = snapshot.val();
+      setProject(data);
+    });
+
+    onValue(TechnologyRef, (snapshot) => {
+      const data = snapshot.val();
+      setTechnology(data);
+    });
+  }, []);
 
   return (
     <div className="home-containerq" id="home">
@@ -44,7 +75,7 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 1, ease: "backInOut" }}
               className="Data"
             >
-              <h1 className="DataValue">8</h1>
+              <h1 className="DataValue">{Client}</h1>
               <h2 className="DataText">Client</h2>
             </motion.div>
             <motion.div
@@ -59,7 +90,7 @@ export default function Home() {
               transition={{ delay: 0.5, duration: 1, ease: "backInOut" }}
               className="Data"
             >
-              <h1 className="DataValue">11</h1>
+              <h1 className="DataValue">{Project}</h1>
               <h2 className="DataText">Project</h2>
             </motion.div>
             <motion.div
@@ -74,7 +105,7 @@ export default function Home() {
               transition={{ delay: 0.7, duration: 1, ease: "backInOut" }}
               className="Data"
             >
-              <h1 className="DataValue">12</h1>
+              <h1 className="DataValue">{Technology}</h1>
               <h2 className="DataText">Languages</h2>
             </motion.div>
           </div>
@@ -84,7 +115,9 @@ export default function Home() {
             transition={{ delay: 0.8, duration: 1, ease: "backInOut" }}
             className="ButtonContainer"
           >
-            <button className="Button">Get Quotation</button>
+            <button onClick={handleButtonClick} className="Button">
+              Get Quotation
+            </button>
           </motion.div>
         </div>
         <motion.div

@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "./Css/Contact.css";
+import { RiWhatsappLine } from "react-icons/ri";
+import { FaFacebookF } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
+import { IoIosCall } from "react-icons/io";
+import { motion, useAnimation } from "framer-motion";
 
 const ContactForm = () => {
   const form = useRef();
@@ -10,11 +15,30 @@ const ContactForm = () => {
   const [message, setMessage] = useState("");
   const [focused, setFocused] = useState(false);
 
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById("contact");
+      const offset = window.innerHeight * 0.8; // Adjust this value according to when you want the animation to start
+
+      if (element.getBoundingClientRect().top < offset) {
+        controls.start({
+          opacity: 1,
+          y: 0,
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [controls]);
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // Send email using EmailJS
     emailjs
-      .sendForm("service_t4oo0lx", "template_2j5i5dd", form.current, {
+      .sendForm("service_xvyig2y", "template_2j5i5dd", form.current, {
         publicKey: "oQw9kiCMbT9s_LE-1",
       })
       .then(
@@ -83,39 +107,63 @@ const ContactForm = () => {
         <div className="contact-info">
           <h3 className="title">Let's get in touch</h3>
           <p className="text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-            dolorum adipisci recusandae praesentium dicta!
+            We're here to listen and assist you. Drop us a line or pay us a
+            visit. We're eager to hear from you!
           </p>
 
           <div className="info">
             <div className="information">
               <i className="fas fa-map-marker-alt"></i> &nbsp; &nbsp;
-              <p>92 Cherry Drive Uniondale, NY 11553</p>
+              <p>Panda Tronic, SriLanka </p>
             </div>
             <div className="information">
               <i className="fas fa-envelope"></i> &nbsp; &nbsp;
-              <p>lorem@ipsum.com</p>
+              <p>pandatroniclk@gmail.com</p>
             </div>
             <div className="information">
               <i className="fas fa-phone"></i>&nbsp;&nbsp;
-              <p>123-456-789</p>
+              <p>+94 76 111 6438</p>
             </div>
           </div>
 
           <div className="social-media">
             <p>Connect with us :</p>
             <div className="social-icons">
-              <a href="#">
-                <i className="fab fa-facebook-f"></i>
+              <a href="https://wa.me/message/SOFTZIICGYYAM1">
+                <RiWhatsappLine
+                  style={{
+                    color: "#FFFFFF",
+                    fontSize: "1.3em",
+                    verticalAlign: "sub",
+                  }}
+                />
               </a>
-              <a href="#">
-                <i className="fab fa-twitter"></i>
+              <a href="https://web.facebook.com/pandatroniclk">
+                <FaFacebookF
+                  style={{
+                    color: "#FFFFFF",
+                    fontSize: "1.1em",
+                    verticalAlign: "sub",
+                  }}
+                />
               </a>
-              <a href="#">
-                <i className="fab fa-instagram"></i>
+              <a href="mailto:pandatroniclk@gmail.com">
+                <MdOutlineEmail
+                  style={{
+                    color: "#FFFFFF",
+                    fontSize: "1.5em",
+                    verticalAlign: "text-bottom",
+                  }}
+                />
               </a>
-              <a href="#">
-                <i className="fab fa-linkedin-in"></i>
+              <a href="tel:+94761116438">
+                <IoIosCall
+                  style={{
+                    color: "#FFFFFF",
+                    fontSize: "1.5em",
+                    verticalAlign: "text-bottom",
+                  }}
+                />
               </a>
             </div>
           </div>

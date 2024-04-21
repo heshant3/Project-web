@@ -29,6 +29,10 @@ function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className={visible ? "NavbarItems" : "NavbarItems hidden"}>
       <Link to="home" spy={true} smooth={true} className="logo">
@@ -39,17 +43,23 @@ function Navbar() {
       </div>
       <ul className={isOpen ? "nav-menu active" : "nav-menu"}>
         <li>
-          <Link activeClass="active" to="home" spy={true} smooth={true}>
+          <Link
+            activeClass="active"
+            to="home"
+            spy={true}
+            smooth={true}
+            onClick={closeMenu}
+          >
             Home
           </Link>
         </li>
         <li>
-          <Link to="about" spy={true} smooth={true}>
+          <Link to="about" spy={true} smooth={true} onClick={closeMenu}>
             About
           </Link>
         </li>
         <li>
-          <Link to="contact" spy={true} smooth={true}>
+          <Link to="contact" spy={true} smooth={true} onClick={closeMenu}>
             Contact
           </Link>
         </li>

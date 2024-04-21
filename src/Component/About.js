@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Css/About.css";
 import Lottie from "react-lottie";
-import animationData from "../assest/Animation.json";
+import animationData from "../assest/Animation1.json";
 import { motion, useAnimation } from "framer-motion";
 
 export default function About() {
@@ -19,7 +19,7 @@ export default function About() {
   useEffect(() => {
     const handleScroll = () => {
       const element = document.getElementById("about");
-      const offset = window.innerHeight * 0.8; // Adjust this value according to when you want the animation to start
+      const offset = window.innerHeight * 0.8;
 
       if (element.getBoundingClientRect().top < offset) {
         controls.start({
