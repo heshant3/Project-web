@@ -14,12 +14,13 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .box {
   width: 40vw;
-  height: 70vh;
-  margin-top: 15em;
+  /* height: 70vh; */
+  /* margin-top: 15em; */
   /* padding-left: 30px;
   padding-right: 30px; */
 }
@@ -27,16 +28,15 @@
 .box2 {
   width: 50vw;
   height: 50%;
-  align-content: end;
   /* background-color: #06a5ff; */
   overflow: hidden;
-  margin-top: 2em;
+  /* margin-top: 2em; */
   position: relative; /* Ensure it's positioned relative or absolute */
   z-index: 1; /* Set a higher z-index value */
 }
 
 .HeadText {
-  font-size: 4rem;
+  font-size: 4vw;
   font-weight: 600;
   color: #4b4b4b;
   font-family: "Poppins", sans-serif;
